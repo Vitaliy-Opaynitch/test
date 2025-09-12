@@ -1,7 +1,5 @@
 <template>
   <AppHeader />
-  <h1 class="text-red-500 text-2xl">Hello Tailwind 👋</h1>
-  <div ref="box" class="w-32 h-32 bg-green-500 rounded-lg"></div>
   <p>
     Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
     documentation
@@ -11,7 +9,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
-import AppHeader from './components/AppHeader.vue'
+import AppHeader from './components/Header/AppHeader.vue'
 
 const box = ref(null)
 
