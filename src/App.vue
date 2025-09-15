@@ -1,6 +1,7 @@
 <template>
   <AppHeader />
   <AppHero />
+  <QuestionBlock />
   <p>
     Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
     documentation
@@ -12,6 +13,7 @@ import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import AppHeader from './components/Header/AppHeader.vue'
 import AppHero from './components/Hero/AppHero.vue'
+import QuestionBlock from './components/QuestionBlock.vue'
 
 const box = ref(null)
 
