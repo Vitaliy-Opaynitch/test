@@ -2,10 +2,7 @@
   <AppHeader />
   <AppHero />
   <QuestionBlock />
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <ForecastBlock />
 </template>
 
 <script setup>
@@ -14,6 +11,7 @@ import { gsap } from 'gsap'
 import AppHeader from './components/Header/AppHeader.vue'
 import AppHero from './components/Hero/AppHero.vue'
 import QuestionBlock from './components/QuestionBlock.vue'
+import ForecastBlock from './components/ForecastBlock.vue'
 
 const box = ref(null)
 
