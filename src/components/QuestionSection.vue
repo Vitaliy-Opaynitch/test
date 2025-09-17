@@ -153,45 +153,6 @@ function handleAnswerClick(value) {
     margin: 20px 0;
   }
 
-  // &__tooltip-btn {
-  //   width: 100%;
-  //   max-width: 276px;
-  //   height: 70px;
-  //   padding: 10px;
-  //   font-size: 1.125rem;
-  //   letter-spacing: 1.5px;
-  //   text-transform: uppercase;
-  //   border-radius: 10px;
-  //   color: #fff;
-  //   font-weight: 600;
-  //   background: #0b42ff;
-  //   position: relative;
-  //   overflow: hidden;
-  //   z-index: 1;
-  //   transition: transform 0.2s ease-in-out;
-
-  //   &:hover {
-  //     color: #000;
-  //   }
-
-  //   &::before {
-  //     content: '';
-  //     position: absolute;
-  //     inset: 0;
-  //     background: #fff;
-  //     transform: scale(0) rotate(45deg);
-  //     transform-origin: bottom left;
-  //     transition: transform 0.5s ease-in-out;
-  //     border-radius: 35%;
-  //     z-index: -1;
-  //   }
-
-  //   &:hover::before {
-  //     transform: scale(2) rotate(45deg);
-  //     color: #000;
-  //   }
-  // }
-
   &__tooltip-btn {
     position: relative;
     overflow: hidden;
