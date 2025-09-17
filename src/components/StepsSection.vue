@@ -140,7 +140,7 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .steps {
-  padding: 120px 0;
+  padding: 170px 0;
   background: #fff;
 
   &__wrapper {
