@@ -15,7 +15,7 @@ import ForecastSection from './components/ForecastSection.vue'
 import StepsSection from './components/StepsSection.vue'
 
 const isLightHeader = ref(false)
-const sections = [] // масив для компонентів
+const sections = []
 let observer
 
 onMounted(() => {
