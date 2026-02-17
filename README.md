@@ -1,6 +1,6 @@
 # test-task-fe
 
-FE test task created with Vue3 + SCSS + Tailwind + Gsap
+Landing created with Vue3 + Tailwind + Gsap
 
 ## Customize configuration
 
