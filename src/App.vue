@@ -1,13 +1,13 @@
 <template>
   <HeaderSection :isLight="isLightHeader" />
-  <HeroSection :ref="(el) => el && sections.push(el)" />
-  <QuestionSection :ref="(el) => el && sections.push(el)" class="light-section" />
-  <ForecastSection :ref="(el) => el && sections.push(el)" />
-  <StepsSection :ref="(el) => el && sections.push(el)" class="light-section" />
+  <HeroSection />
+  <QuestionSection />
+  <ForecastSection />
+  <StepsSection />
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import HeaderSection from './components/Header/HeaderSection.vue'
 import HeroSection from './components/Hero/HeroSection.vue'
 import QuestionSection from './components/QuestionSection.vue'
@@ -15,31 +15,29 @@ import ForecastSection from './components/ForecastSection.vue'
 import StepsSection from './components/StepsSection.vue'
 
 const isLightHeader = ref(false)
-const sections = []
 let observer
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick()
+  const sectionEls = document.querySelectorAll('[data-observe-section]')
+  if (!sectionEls.length) return
+
   observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          isLightHeader.value = entry.target.classList.contains('light-section')
-        }
-      })
+      const intersecting = entries.filter((e) => e.isIntersecting)
+      if (!intersecting.length) return
+      const mostVisible = intersecting.reduce((best, e) =>
+        e.intersectionRatio > best.intersectionRatio ? e : best,
+      )
+      isLightHeader.value = mostVisible.target.dataset.header === 'light'
     },
-    { threshold: 0.5 },
+    { threshold: [0.25, 0.5, 0.75] },
   )
 
-  sections.forEach((cmp) => {
-    if (cmp?.$el) {
-      observer.observe(cmp.$el)
-    }
-  })
+  sectionEls.forEach((el) => observer.observe(el))
 })
 
-onUnmounted(() => {
-  if (observer) observer.disconnect()
+onBeforeUnmount(() => {
+  observer?.disconnect()
 })
 </script>
-
-<style scoped></style>

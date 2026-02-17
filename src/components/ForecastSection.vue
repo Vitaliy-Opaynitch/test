@@ -1,6 +1,8 @@
 <template>
   <section
     class="forecast"
+    data-observe-section
+    data-header="dark"
     @mouseenter="showButton = true"
     @mouseleave="showButton = false"
     @mousemove="moveButton"
@@ -63,11 +65,10 @@ function moveButton(e) {
 
   &__title {
     padding-top: 5rem;
-    font-size: 110px;
+    font-size: 80px;
     line-height: 1;
     font-weight: 600;
     margin: 0 0 18px;
-    letter-spacing: -0.02em;
   }
 
   &__subtitle {
