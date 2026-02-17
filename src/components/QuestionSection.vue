@@ -1,5 +1,5 @@
 <template>
-  <section class="survey-question">
+  <section class="survey-question light-section" data-observe-section data-header="light">
     <div class="survey-question__header-image"></div>
     <div class="survey-question__main-image"></div>
 

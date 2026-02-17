@@ -1,5 +1,9 @@
 <template>
-  <section class="relative bg-black text-white min-h-screen flex items-center justify-center px-8">
+  <section
+    class="relative bg-black text-white min-h-screen flex items-center justify-center px-8"
+    data-observe-section
+    data-header="dark"
+  >
     <div class="absolute inset-0 overflow-hidden">
       <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <path
@@ -116,7 +120,7 @@ onBeforeUnmount(() => {
 .border-gradient {
   position: absolute;
   inset: 0;
-  padding: 2px; /* товщина бордера */
+  padding: 2px;
   border-radius: inherit;
   pointer-events: none;
   background: linear-gradient(90deg, #ffffff, #fd86ff, #fb38ff, #3858ff, #8bff78);
