@@ -105,9 +105,28 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
+@use '@/styles/breakpoints' as bp;
+@use '@/styles/colors' as c;
+
 .steps {
   padding: 60px 0;
-  background: #fff;
+  background: c.$color-white;
+
+  @include bp.md-down {
+    padding: 48px 24px;
+  }
+
+  @include bp.sm-down {
+    padding: 40px 20px;
+  }
+
+  @include bp.xs-down {
+    padding: 32px 16px;
+  }
+
+  @include bp.xxs-down {
+    padding: 24px 12px;
+  }
 
   &__wrapper {
     display: flex;
@@ -115,6 +134,22 @@ onUnmounted(() => {
     gap: 120px;
     max-width: 1200px;
     margin: 0 auto;
+
+    @include bp.md-down {
+      gap: 80px;
+    }
+
+    @include bp.sm-down {
+      gap: 56px;
+    }
+
+    @include bp.xs-down {
+      gap: 40px;
+    }
+
+    @include bp.xxs-down {
+      gap: 32px;
+    }
   }
 
   &__block {
@@ -122,12 +157,25 @@ onUnmounted(() => {
     justify-content: space-between;
     align-items: center;
     gap: 48px;
-    min-height: 380px;
     opacity: 0.45;
     transform: scale(0.98);
     transition:
       opacity 0.5s ease,
       transform 0.5s ease;
+
+    @include bp.md-down {
+      gap: 32px;
+    }
+
+    @include bp.sm-down {
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
+    }
+
+    @include bp.xs-down {
+      gap: 20px;
+    }
 
     &--active {
       opacity: 1;
@@ -141,6 +189,22 @@ onUnmounted(() => {
     flex-direction: column;
     gap: 16px;
     min-width: 0;
+    padding-left: 0;
+
+    @include bp.md-down {
+      padding-left: 24px;
+    }
+
+    @include bp.sm-down {
+      flex: 1 1 auto;
+      width: 100%;
+      align-items: center;
+      padding-left: 0;
+    }
+
+    @include bp.xs-down {
+      gap: 12px;
+    }
   }
 
   &__number {
@@ -150,10 +214,22 @@ onUnmounted(() => {
     width: 36px;
     height: 36px;
     font-weight: bold;
-    color: #000;
-    background: #fff;
-    border: 2px solid #000;
+    color: c.$color-black;
+    background: c.$color-white;
+    border: 2px solid c.$color-black;
     border-radius: 50%;
+
+    @include bp.xs-down {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+    }
+
+    @include bp.xxs-down {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
   }
 
   &__title {
@@ -161,22 +237,72 @@ onUnmounted(() => {
     font-size: 37px;
     font-weight: 600;
     line-height: 1.3;
-    color: #000;
+    color: c.$color-black;
+
+    @include bp.md-down {
+      font-size: 30px;
+    }
+
+    @include bp.sm-down {
+      font-size: 26px;
+    }
+
+    @include bp.xs-down {
+      font-size: 22px;
+    }
+
+    @include bp.xxs-down {
+      font-size: 18px;
+    }
   }
 
   &__desc {
     margin: 0;
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
+    color: c.$color-text-muted;
+
+    @include bp.md-down {
+      font-size: 15px;
+    }
+
+    @include bp.xs-down {
+      font-size: 14px;
+    }
+
+    @include bp.xxs-down {
+      font-size: 13px;
+    }
   }
 
   &__image-wrapper {
     flex: 1 1 60%;
     min-width: 0;
+    max-width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include bp.md-down {
+      flex: 1 1 50%;
+      max-width: 50%;
+    }
+
+    @include bp.sm-down {
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      order: -1;
+    }
+
+    @include bp.xs-down {
+      max-width: 300px;
+    }
+
+    @include bp.xxs-down {
+      max-width: 260px;
+    }
   }
 
   &__image {
@@ -185,6 +311,22 @@ onUnmounted(() => {
     max-height: 420px;
     height: auto;
     object-fit: contain;
+
+    @include bp.md-down {
+      max-height: 340px;
+    }
+
+    @include bp.sm-down {
+      max-height: 280px;
+    }
+
+    @include bp.xs-down {
+      max-height: 220px;
+    }
+
+    @include bp.xxs-down {
+      max-height: 180px;
+    }
   }
 }
 </style>

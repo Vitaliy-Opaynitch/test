@@ -1,0 +1,37 @@
+// Desktop-first breakpoints
+$xxs: 375px;
+$xs: 576px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1440px;
+
+// Desktop-first: max-width media (styles apply when viewport <= breakpoint)
+@mixin lg-down {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin xs-down {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+
+@mixin xxs-down {
+  @media (max-width: $xxs) {
+    @content;
+  }
+}
